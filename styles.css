@@ -266,3 +266,81 @@ p { margin: 0; }
 .footer-links a { color: var(--fg-muted); display: flex; align-items: center; gap: 6px; }
 .footer-links .divider { width: 1px; height: 16px; background: var(--line); }
 .footer-hmg { font-size: 12.5px; }
+
+/* ---- Nav variants ---- */
+.nav-cta-active { background: var(--accent); color: oklch(15% 0.02 55) !important; border-color: var(--accent); }
+
+/* ---- Contact page ---- */
+.contact-hero {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(280px, 420px);
+  gap: 48px;
+  align-items: center;
+  padding: 88px var(--gutter) 64px;
+  border-bottom: 1px solid var(--line);
+}
+.contact-hero-copy .eyebrow { margin-bottom: 16px; }
+.contact-hero-copy h1 {
+  font-style: italic;
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.contact-hero-copy p {
+  color: var(--fg-muted);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 460px;
+}
+.contact-photo { aspect-ratio: 4 / 5; }
+
+.contact-body {
+  display: grid;
+  grid-template-columns: minmax(320px, 640px) minmax(220px, 320px);
+  gap: 64px;
+  padding: 72px var(--gutter) 96px;
+}
+.contact-form { display: flex; flex-direction: column; gap: 22px; }
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.contact-form .optional { text-transform: none; letter-spacing: 0; opacity: 0.7; }
+.contact-form input,
+.contact-form textarea {
+  font-family: 'Work Sans', system-ui, sans-serif;
+  font-size: 15px;
+  color: var(--fg);
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 12px 14px;
+  resize: vertical;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: oklch(55% 0.02 70); }
+.contact-form input:focus,
+.contact-form textarea:focus { outline: none; border-color: var(--accent); }
+.contact-submit {
+  align-self: flex-start;
+  background: transparent;
+  font-family: inherit;
+  cursor: pointer;
+}
+.contact-submit:disabled { opacity: 0.6; cursor: default; }
+.form-status { min-height: 1.2em; font-size: 13.5px; }
+.form-status-ok { color: var(--accent); }
+.form-status-error { color: oklch(68% 0.16 25); }
+
+.contact-info { display: flex; flex-direction: column; gap: 28px; padding-top: 4px; }
+.contact-info-block p { color: var(--fg-muted); font-size: 14.5px; line-height: 1.6; margin: 0; }
+
+@media (max-width: 760px) {
+  .contact-hero { grid-template-columns: 1fr; }
+  .contact-body { grid-template-columns: 1fr; }
+}
