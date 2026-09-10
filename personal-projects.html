@@ -31,11 +31,34 @@
   <p>Landscapes, birds in flight, cityscapes &mdash; ongoing personal work.</p>
 </section>
 
-<section class="masonry">
-  <figure><img src="uploads/personal-projects-1.jpg" alt="Lake house at dusk with reflection" loading="lazy"></figure>
-  <figure><img src="uploads/personal-projects-2.jpg" alt="Storm clouds over a still lake" loading="lazy"></figure>
-  <figure><img src="uploads/personal-projects-3.jpg" alt="Backlit wildflowers at sunset" loading="lazy"></figure>
+<section class="stagger-grid">
+
+  <div class="stagger-row">
+    <div class="stagger-item w-60">
+      <img src="uploads/personal-projects-1.jpg" alt="Lake house at dusk with reflection" loading="lazy">
+    </div>
+    <div class="stagger-item w-40 offset-down">
+      <img src="uploads/personal-projects-2.jpg" alt="Storm clouds over a still lake" loading="lazy">
+    </div>
+  </div>
+
+  <p class="gallery-text is-placeholder">[Add a few sentences here about this set of images &mdash; where they were taken, what you were after, or anything you want visitors to know before moving on.]</p>
+
+  <div class="stagger-row">
+    <div class="stagger-item w-70">
+      <img src="uploads/personal-projects-3.jpg" alt="Backlit wildflowers at sunset" loading="lazy">
+    </div>
+  </div>
+
 </section>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&#8249;</button>
+  <img class="lightbox-img" id="lightboxImg" alt="">
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">&#8250;</button>
+  <div class="lightbox-count" id="lightboxCount"></div>
+</div>
 
 <footer class="site-footer">
   <div class="footer-copy">&copy; 2026 Gilbert B Hammer &mdash; Photography</div>
@@ -54,5 +77,6 @@
   </div>
 </footer>
 
+<script src="gallery.js"></script>
 </body>
 </html>
