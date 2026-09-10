@@ -10,6 +10,12 @@
 </head>
 <body>
 
+<div id="intro" aria-hidden="true">
+  <div class="intro-sub">Photography</div>
+  <div class="intro-name">Gilbert B Hammer</div>
+  <span class="intro-sig-mask"><span class="intro-sig">Gilbert B Hammer</span></span>
+</div>
+
 <header class="nav">
   <div class="brand">
     <span class="brand-name">Gilbert B Hammer</span>
@@ -26,6 +32,7 @@
 </header>
 
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-tag">Placeholder frame — hero photograph</div>
   <div class="hero-copy">
     <div class="eyebrow">Ithaca, NY &mdash; Editorial &amp; Documentary</div>
@@ -154,6 +161,39 @@
     </a>
   </div>
 </footer>
+
+<script>
+(function () {
+  var intro = document.getElementById('intro');
+
+  function revealHero() {
+    document.body.classList.add('hero-in');
+  }
+
+  var alreadyPlayed = false;
+  try { alreadyPlayed = !!sessionStorage.getItem('ghIntroPlayed'); } catch (e) {}
+
+  if (!intro || alreadyPlayed) {
+    if (intro) intro.classList.add('intro-skip');
+    revealHero();
+    return;
+  }
+
+  try { sessionStorage.setItem('ghIntroPlayed', '1'); } catch (e) {}
+
+  document.body.style.overflow = 'hidden';
+
+  setTimeout(function () {
+    intro.classList.add('intro-done');
+    document.body.style.overflow = '';
+    revealHero();
+  }, 2200);
+
+  intro.addEventListener('transitionend', function () {
+    intro.classList.add('intro-skip');
+  }, { once: true });
+})();
+</script>
 
 </body>
 </html>

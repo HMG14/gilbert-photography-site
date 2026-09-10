@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600&family=Bricolage+Grotesque:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600&family=Bricolage+Grotesque:wght@400;600&family=Alex+Brush&display=swap');
 
 :root {
   --bg: oklch(16% 0.012 55);
@@ -86,14 +86,27 @@ p { margin: 0; }
   display: flex;
   align-items: flex-end;
   overflow: hidden;
+  background: var(--bg);
+}
+.hero-bg {
+  position: absolute;
+  inset: -14%;
+  z-index: 0;
   background:
     radial-gradient(120% 90% at 15% 10%, oklch(30% 0.05 55 / 0.6), transparent 60%),
     linear-gradient(155deg, oklch(24% 0.03 40) 0%, oklch(14% 0.015 250) 55%, oklch(10% 0.01 55) 100%);
+  transform: scale(1) translate(0, 0);
+  animation: heroKenburns 15s ease-out forwards;
+}
+@keyframes heroKenburns {
+  from { transform: scale(1) translate(0, 0); }
+  to   { transform: scale(1.22) translate(-3%, -2.5%); }
 }
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   opacity: 0.10;
   background-image: repeating-linear-gradient(115deg, oklch(96% 0 0) 0px, transparent 1px, transparent 3px);
   mix-blend-mode: overlay;
@@ -102,6 +115,7 @@ p { margin: 0; }
   position: absolute;
   top: 26px;
   right: var(--gutter);
+  z-index: 2;
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -112,6 +126,7 @@ p { margin: 0; }
 }
 .hero-copy {
   position: relative;
+  z-index: 2;
   padding: 64px var(--gutter) 72px;
   max-width: 900px;
 }
@@ -127,6 +142,80 @@ p { margin: 0; }
   color: var(--fg-muted);
   font-size: 17px;
   line-height: 1.6;
+}
+
+/* Hero text reveal — triggered by body.hero-in, so timing lines up whether
+   the intro plays or is skipped (see intro script) */
+.hero-copy .eyebrow,
+.hero-copy h1,
+.hero-copy p {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.9s cubic-bezier(.2,.7,.2,1), transform 0.9s cubic-bezier(.2,.7,.2,1);
+}
+.hero-copy .eyebrow { transition-delay: 0.05s; }
+.hero-copy h1 { transition-delay: 0.2s; }
+.hero-copy p { transition-delay: 0.35s; }
+body.hero-in .hero-copy .eyebrow,
+body.hero-in .hero-copy h1,
+body.hero-in .hero-copy p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Intro splash ---- */
+#intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--bg);
+  transition: opacity 0.9s cubic-bezier(.4,0,.2,1), transform 0.9s cubic-bezier(.4,0,.2,1);
+}
+#intro.intro-done {
+  opacity: 0;
+  transform: translateY(-18px) scale(0.98);
+  pointer-events: none;
+}
+#intro.intro-skip { display: none; }
+.intro-sub {
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  opacity: 0;
+  animation: introFade 0.7s 0.05s cubic-bezier(.2,.7,.2,1) forwards;
+}
+.intro-name {
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(26px, 4.5vw, 42px);
+  letter-spacing: 0.005em;
+  color: var(--fg);
+  opacity: 0;
+  transform: translateY(14px);
+  animation: introFade 0.7s 0.18s cubic-bezier(.2,.7,.2,1) forwards;
+}
+@keyframes introFade { to { opacity: 1; transform: translateY(0); } }
+.intro-sig-mask {
+  display: inline-block;
+  overflow: hidden;
+  clip-path: inset(0 100% 0 0);
+  animation: introWipe 1.3s 0.6s cubic-bezier(.3,.6,.2,1) forwards;
+}
+@keyframes introWipe { to { clip-path: inset(0 0 0 0); } }
+.intro-sig {
+  font-family: 'Alex Brush', cursive;
+  font-size: clamp(38px, 6vw, 60px);
+  line-height: 1;
+  color: var(--accent);
+  white-space: nowrap;
+  padding: 0 4px;
 }
 
 /* ---- Statement ---- */
