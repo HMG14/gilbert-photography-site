@@ -164,13 +164,41 @@ p { margin: 0; }
 }
 .hero-copy .eyebrow { transition-delay: 0.05s; }
 .hero-copy h1 .word-1 { transition-delay: 0.2s; }
-.hero-copy h1 .word-2 { transition-delay: 2.2s; }
 .hero-copy p { transition-delay: 0.35s; }
 body.hero-in .hero-copy .eyebrow,
 body.hero-in .hero-copy h1 .word,
 body.hero-in .hero-copy p {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Second headline word: "Visualized" appears, holds, fades out, then
+   "Captured" fades in right away to replace it — same slot, stacked via
+   grid so the container sizes to the longer word without extra markup. */
+.hero-copy h1 .word-slot {
+  display: inline-grid;
+}
+.hero-copy h1 .word-2a,
+.hero-copy h1 .word-2b {
+  grid-area: 1 / 1;
+  white-space: nowrap;
+  opacity: 0;
+}
+body.hero-in .hero-copy h1 .word-2a {
+  animation: heroWordCycle 2.8s cubic-bezier(.2,.7,.2,1) 2.2s forwards;
+}
+body.hero-in .hero-copy h1 .word-2b {
+  animation: heroWordIn 0.9s cubic-bezier(.2,.7,.2,1) 5s forwards;
+}
+@keyframes heroWordCycle {
+  0%   { opacity: 0; transform: translateY(22px); }
+  32%  { opacity: 1; transform: translateY(0); }
+  68%  { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-22px); }
+}
+@keyframes heroWordIn {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ---- Intro splash ---- */
