@@ -48,6 +48,12 @@
   nextBtn.addEventListener('click', next);
   prevBtn.addEventListener('click', prev);
 
+  // Clicking the enlarged photo itself (not the nav arrows) closes the lightbox.
+  lightboxImg.addEventListener('click', function (e) {
+    e.stopPropagation();
+    close();
+  });
+
   lightbox.addEventListener('click', function (e) {
     if (e.target === lightbox) close();
   });

@@ -164,7 +164,7 @@ p { margin: 0; }
 }
 .hero-copy .eyebrow { transition-delay: 0.05s; }
 .hero-copy h1 .word-1 { transition-delay: 0.2s; }
-.hero-copy h1 .word-2 { transition-delay: 3.2s; }
+.hero-copy h1 .word-2 { transition-delay: 2.2s; }
 .hero-copy p { transition-delay: 0.35s; }
 body.hero-in .hero-copy .eyebrow,
 body.hero-in .hero-copy h1 .word,
