@@ -481,6 +481,14 @@ body.hero-in .hero-copy h1 .word-2b {
   line-height: 1.6;
   max-width: 560px;
 }
+.gallery-statement {
+  padding: 40px var(--gutter) 8px;
+  color: var(--fg-muted);
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: 640px;
+}
+.gallery-statement p + p { margin-top: 16px; }
 
 /* ---- Staggered gallery grid ---- */
 .stagger-grid {
