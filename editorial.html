@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Editorial — Gilbert B Hammer Photography</title>
 <meta name="description" content="Editorial photography by Gilbert B Hammer — assignment work for Sidelines Magazine.">
+<link rel="canonical" href="https://gilbert.photography.hammermediagroup.com/editorial.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%23151210'/%3E%3Cpath d='M5 9h2.7L9 6.6h6L16.3 9H19a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1Z' stroke='%23e0a458' stroke-width='1.4' fill='none'/%3E%3Ccircle cx='12' cy='14' r='3.3' stroke='%23e0a458' stroke-width='1.4'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -15,7 +16,12 @@
     <span class="brand-name">Gilbert B Hammer</span>
     <span class="brand-sub">Photography</span>
   </a>
-  <nav class="nav-links">
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+  <nav class="nav-links" id="navLinks">
     <a href="commercial.html">Commercial</a>
     <a href="equine.html">Equine</a>
     <a href="client-projects.html">Client Projects</a>
@@ -91,6 +97,7 @@
   </div>
 </footer>
 
+<script src="nav.js"></script>
 <script src="gallery.js"></script>
 </body>
 </html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gilbert.photography.hammermediagroup.com/sitemap.xml
