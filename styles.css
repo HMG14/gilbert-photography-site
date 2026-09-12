@@ -497,7 +497,7 @@ body.hero-in .hero-copy h1 .word-2b {
   padding: 64px var(--gutter) 40px;
   display: flex;
   flex-direction: column;
-  gap: 88px;
+  gap: 104px;
 }
 .stagger-row {
   display: flex;
@@ -563,11 +563,27 @@ body.hero-in .hero-copy h1 .word-2b {
   max-width: 480px;
 }
 
+/* A labeled break between thematic groups within one gallery page —
+   more air than a normal row gap, plus a rule and a short intro line. */
+.section-divider {
+  padding-top: 56px;
+  margin-top: 16px;
+  border-top: 1px solid var(--line);
+  max-width: 640px;
+}
+.section-divider .eyebrow { margin-bottom: 10px; }
+.section-divider p {
+  color: var(--fg-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
 @media (max-width: 760px) {
   .stagger-row { flex-direction: column; gap: 24px; }
   .stagger-item.w-60, .stagger-item.w-45, .stagger-item.w-40, .stagger-item.w-70 { flex-basis: auto; }
   .stagger-item.offset-down { margin-top: 0; }
-  .stagger-grid { gap: 48px; padding-top: 48px; }
+  .stagger-grid { gap: 56px; padding-top: 48px; }
+  .section-divider { padding-top: 32px; margin-top: 8px; }
 }
 
 /* ---- Cluster block: several smaller images grouped as one unit ---- */
