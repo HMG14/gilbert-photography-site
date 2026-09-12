@@ -411,7 +411,7 @@ body.hero-in .hero-copy h1 .word-2b {
   line-height: 1.6;
   max-width: 460px;
 }
-.contact-photo { aspect-ratio: 4 / 5; }
+.contact-photo { aspect-ratio: 1 / 1; max-width: 260px; margin-left: auto; }
 
 .contact-body {
   display: grid;
