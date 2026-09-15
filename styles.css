@@ -563,6 +563,26 @@ body.hero-in .hero-copy h1 .word-2b {
   border-bottom-color: var(--accent);
 }
 
+/* Right-aligned "back to top" link closing out each section on
+   pages built from several .section-divider groups. */
+.back-to-top {
+  text-align: right;
+}
+.back-to-top a {
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--fg-muted);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.back-to-top a:hover,
+.back-to-top a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
 /* ---- Staggered gallery grid ---- */
 .stagger-grid {
   padding: 64px var(--gutter) 40px;
