@@ -539,6 +539,30 @@ body.hero-in .hero-copy h1 .word-2b {
 }
 .gallery-statement p + p { margin-top: 16px; }
 
+/* Jump-to-section links for pages with several thematic groups
+   (e.g. Personal Projects) — one link per .section-divider below. */
+.section-nav {
+  padding: 28px var(--gutter) 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  max-width: 900px;
+}
+.section-nav a {
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--fg-muted);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.section-nav a:hover,
+.section-nav a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
 /* ---- Staggered gallery grid ---- */
 .stagger-grid {
   padding: 64px var(--gutter) 40px;
