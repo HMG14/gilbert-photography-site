@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Gilbert B Hammer Photography</title>
+<meta name="description" content="About Gilbert B Hammer, an Ithaca, NY photographer working in editorial, commercial and documentary photography.">
+<link rel="canonical" href="https://gilbert.photography.hammermediagroup.com/about.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%23151210'/%3E%3Cpath d='M5 9h2.7L9 6.6h6L16.3 9H19a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1Z' stroke='%23e0a458' stroke-width='1.4' fill='none'/%3E%3Ccircle cx='12' cy='14' r='3.3' stroke='%23e0a458' stroke-width='1.4'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<style>
+.about-hero{display:grid;grid-template-columns:minmax(320px,1fr) minmax(280px,480px);gap:56px;align-items:center;padding:88px var(--gutter) 72px;border-bottom:1px solid var(--line)}
+.about-hero-copy .eyebrow{margin-bottom:16px}
+.about-hero-copy h1{font-style:italic;font-size:clamp(36px,6vw,64px);line-height:1;margin-bottom:24px}
+.about-hero-copy p{color:var(--fg-muted);font-size:16px;line-height:1.7;max-width:520px}
+.about-hero-copy p+p{margin-top:16px}
+.about-photo{margin:0}
+.about-photo img{display:block;width:100%;height:auto;border-radius:2px;border:1px solid var(--line)}
+.about-body{padding:72px var(--gutter) 96px;max-width:860px}
+.about-body h2{font-size:clamp(26px,3.4vw,36px);margin-bottom:16px}
+.about-body p{color:var(--fg-muted);font-size:16px;line-height:1.7}
+.about-body p+p{margin-top:16px}
+.about-cta{margin-top:32px;display:inline-block}
+@media (max-width:760px){.about-hero{grid-template-columns:1fr;gap:32px;padding:56px var(--gutter) 48px}.about-photo{order:-1}.about-body{padding:48px var(--gutter) 64px}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="index.html" class="brand">
+    <span class="brand-name">Gilbert B Hammer</span>
+    <span class="brand-sub">Photography</span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+  <nav class="nav-links" id="navLinks">
+    <a href="commercial.html">Commercial</a>
+    <a href="equine.html">Equine</a>
+    <a href="client-projects.html">Client Projects</a>
+    <a href="personal-projects.html">Personal Projects</a>
+    <a href="editorial.html">Editorial</a>
+    <a href="about.html" class="nav-current">About</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
+  </nav>
+</header>
+
+<section class="about-hero">
+  <div class="about-hero-copy">
+    <div class="eyebrow">About</div>
+    <h1>Gilbert B Hammer</h1>
+    <p>For over two decades, I have been creating still and video images for clients across corporate, agriculture, retail, non-profit and magazine work.</p>
+    <p>My first camera was a Nikon FTN, a gift from my father, who brought it back from a business trip to Japan. It sits on a shelf near my desk and reminds me that compelling images are as much a function of the photographer&rsquo;s eye as the camera platform they use.</p>
+  </div>
+  <figure class="about-photo photo">
+    <img src="uploads/about-gilbert.jpg" alt="Gilbert Hammer photographing outdoors with a telephoto lens" width="582" height="441">
+  </figure>
+</section>
+
+<section class="about-body">
+  <h2>Learning the craft</h2>
+  <p>I learned to shoot in high school, then worked for several years as an assistant to an accomplished professional photographer. I also attended the Film &amp; Video Workshops in Rockport, Maine, where I honed my skills with lighting.</p>
+  <p>Today I shoot with a number of Nikon cameras, both DSLR and mirrorless, for their fluid interface and excellent optics. The FTN still works, many years after I first picked it up.</p>
+  <a href="contact.html" class="cta-button about-cta">Prints &amp; commissions</a>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-copy">&copy; 2026 Gilbert B Hammer &mdash; Photography</div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/gilbertbhammer/" aria-label="Instagram" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
+    </a>
+    <span class="divider"></span>
+    <a href="https://hammermediagroup.com" class="footer-hmg">
+      Part of Hammer Media Group
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+
+</body>
+</html>
